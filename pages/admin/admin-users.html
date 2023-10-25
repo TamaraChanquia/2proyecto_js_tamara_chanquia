@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productos</title>
+
+    <link rel="shortcut icon" href="/assets/images/logoo.png" type="image/x-icon">
+    <!-- FONTAWESONE  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- BOOTSTRAPS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- ==========HEADER=========== -->
+
+    <header class="main-header">
+        <nav class="navbar navbar-expand-md main-navbar " data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="" class="main-logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="main-menu-icon"><i class="fa-solid fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " href="/pages/contact/contact.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/about-us/about-us.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/pages/register/register.html">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./pages/productos/productos.html">Productos</a>
+                        </li>
+
+                    </ul>
+                    </ul>
+                    <div class="header-user">
+                        <a href="/pages/admin/admin-products.html"> <i class="fa-solid fa-cart-shopping"></i></a>
+
+                        <div>Tamara Chanquía</div>
+                        <a href="/pages/login/login.html"><img class="header-user-img"
+                                src="https://img.freepik.com/free-icon/user_318-159711.jpg?w=360"
+                                alt="Imagen de Usuario" /></a>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+
+    <main class="main-container conteiner-xl">
+        <section class="section-padding mt-5">
+            <div class="text-center text-white pb-5">
+                <h2>ADMINISTRADOR DE USUARIOS</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 bg-success rounded-3 table-responsive">
+                        <!-- #Tabla -->
+                        <div class="mb-3">
+                            <label for="filtrar" class="form-label m-2 fw-bold text-white">Filtrar</label>
+                            <input type="text" class="form-control" id="filtrar" placeholder="Nombre Usuario">
+                        </div>
+
+                        <table class="table table-dark table-striped text-center align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Fullname</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-users" class="table-group-divider">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark text-white">
+                        <!-- #Formulario -->
+                        <form id="formularioUsuario">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Usuario</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Fullname</label>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Leonel Messi" required minlength="3" maxlength="70">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                        placeholder="example@example.com" minlength="3" maxlength="70" required>
+                                </div>
+
+                                <div class="mb-3 d-flex gap-3">
+                                    <div class="w-100">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" minlength="3"
+                                            maxlength="70" required>
+                                    </div>
+                                    <div class="w-100">
+                                        <label for="role" class="form-label">Role</label>
+                                        <select class="form-select" id="role" name="role" required>
+                                            <option value=""></option>
+                                            <option value="ROLE_CLIENT">Cliente</option>
+                                            <option value="ROLE_ADMIN">Administrador</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar
+                                    Usuario</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ==========FOOTER=========== -->
+    <footer class="conteiner-footer">
+        <section class="footer-section">
+            <div class="row g-0">
+                <div class="col-12 col-lg-4">
+                    <div class="main-footer">
+                        <a href="https://www.linkedin.com/in/tamara-chanquia"> <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=3518075859">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="main-footer">
+                        <span class="info-titulo">SunShine Moda</span>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="main-footer">
+                        <span>Av. Colón 3.000</span>
+                        <span>Contactanos</span>
+                        <span>0351-8075859</span>
+                        <span>Lunes a viernes <br> 9 a 18 hs.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/admin-users.js"></script>
+    <script src="/js/user-info.js"></script>
+
+</body>
+
+</html>
